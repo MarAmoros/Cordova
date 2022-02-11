@@ -29,8 +29,8 @@
             let pass_reg2 = document.getElementById("pass_reg2").value;
 
 
-            if (userRe !== null) {
-                if (emailRe !== null) {
+            if (userRe !== "" || !(Object.keys(users).includes(userRe)) ) { // no va que no se pueda repetir usuario
+                if (emailRe !== "") {
                     if (pass_reg == pass_reg2) {
 
                         users[userRe] = {password: pass_reg, email: emailRe}
@@ -38,8 +38,17 @@
                         alert("registro realizado")
                     
                     }
+                    else{
+                        alert("las contraseñas no son iguales")
+                    }
                 
                 }
+                else{
+                    alert("email vacio")
+                }
+            }
+            else{
+                alert("username vacio o repetido")
             }
 
         }
