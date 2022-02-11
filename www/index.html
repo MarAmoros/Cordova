@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login registre</title>
+    <script type="text/javascript">
+        let users = {pepe:{password: "123", email: "pepe@gmail.com"} ,lola: {password: "abc", email: "lola@gmail.com"}};
+
+        function fer_login(){
+            console.log("Dins de la funcio");
+            let userLo = document.getElementById("usernameLogin").value;
+            let passLo = document.getElementById("password").value;
+
+            if (users[userLo]["password"]== passLo ) {
+                alert("Hola "+ userLo )
+            }
+            else{
+                alert("Usuario o ocntraseña incorrectos")
+            }
+        }
+
+        function registre(){
+            let userRe = document.getElementById("usernameRegister").value;
+            let emailRe = document.getElementById("email").value;
+            let pass_reg = document.getElementById("pass_reg").value;
+
+            if (userRe !== null) {
+                if (emailRe !== null) {
+                    if (pass_reg !== null) {
+
+                        users[userRe] = {password: pass_reg, email: emailRe}
+
+                        alert("registro realizado")
+                    
+                    }
+                
+                }
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form>
+        <fieldset style="background-color: beige;"> <legend > <strong style="font-size: xx-large;">Login</strong> </legend>
+
+            <label >Username</label> 
+            <br>
+            <input id="usernameLogin" type="text" name="username">
+            <br>
+            <label >Password</label> 
+            <br>
+            <input id="password" type="password" name="password">
+            <br>
+
+            <input type="button" value="submit" onclick="fer_login()">
+        </fieldset>
+
+    </form>
+    <form style="background-color: beige;">
+        <fieldset style="background-color: bisque;"><legend><strong style="font-size: xx-large;">Register</strong> </legend>
+            <label >Username</label> 
+            <br>
+            <input id="usernameRegister" type="text" name="username">
+            <br>
+            <label >Email</label> 
+            <br>
+            <input id="email" type="email" name="Email">
+            <br>
+            <label >Password</label> 
+            <br>
+            <input id="pass_reg" type="password" name="Password">
+            <br>
+        <input type="button" value="submit" onclick="registre()">
+    </fieldset>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>
