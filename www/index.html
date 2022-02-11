@@ -26,10 +26,12 @@
             let userRe = document.getElementById("usernameRegister").value;
             let emailRe = document.getElementById("email").value;
             let pass_reg = document.getElementById("pass_reg").value;
+            let pass_reg2 = document.getElementById("pass_reg2").value;
+
 
             if (userRe !== null) {
                 if (emailRe !== null) {
-                    if (pass_reg !== null) {
+                    if (pass_reg == pass_reg2) {
 
                         users[userRe] = {password: pass_reg, email: emailRe}
 
@@ -76,6 +78,10 @@
             <label >Password</label> 
             <br>
             <input id="pass_reg" type="password" name="Password">
+            <br>
+            <label >Verify Password</label> 
+            <br>
+            <input id="pass_reg2" type="password" name="Password2">
             <br>
         <input type="button" value="submit" onclick="registre()">
     </fieldset>
