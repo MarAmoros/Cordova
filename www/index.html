@@ -24,14 +24,14 @@
 
         function registre(){
             let userRe = document.getElementById("usernameRegister").value;
-            let emailRe = document.getElementById("email").value;
+            let emailRe = document.getElementById("email").value; 
             let pass_reg = document.getElementById("pass_reg").value;
             let pass_reg2 = document.getElementById("pass_reg2").value;
 
 
-            if (userRe !== "" || !(Object.keys(users).includes(userRe)) ) { // no va que no se pueda repetir usuario
+            if (userRe !== "" && Object.keys(users).includes(userRe) == false) { // no va que no se pueda repetir usuario
                 if (emailRe !== "") {
-                    if (pass_reg == pass_reg2) {
+                    if (pass_reg == pass_reg2 && pass_reg != "" && pass_reg2 != "") {
 
                         users[userRe] = {password: pass_reg, email: emailRe}
 
